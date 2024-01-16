@@ -1,5 +1,5 @@
 #1
-for i in range(3,-1,-1):
+for i in list[range(3,-1,-1)]:
     print(i)
 
 #2
