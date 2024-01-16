@@ -1,12 +1,21 @@
-#index는 -1반환하지않음 따라서 예외처리 필요
-#index의 return값으로 뭔가 하려고 하면 안됨
-subjects="pythoncdatabaselinux"
-print(subjects.isalnum())
-print("%e"%0.7045)
-print("%d%%"%100) #%자체를 쓰고 싶다.
+subjects={'python':"key","c++":"sung","datastructure":"kim","database":"kang"}
+print("{0[python]} {0[datastructure]}".format(subjects))
+# prime number
+number=int(input("Input number : "))
+cnt=0
 
-subject =input("수강신청과목 입력 : ")
-try:#여기서 예외가 터진다면
-    print(f"해당 과목이 존재합니다. 위치는 {subjects.index(subject)}번 인덱스 ")
-except ValueError:#여기서 해결
-    print("해당 과목이 존재하지 않습니다.")
+i=1
+while i<= number:
+    if number % i == 0:
+        cnt=cnt+1
+        #print(i) 약수 구하기
+    i+=1 #무한 루프에 빠지지않기위해
+if cnt ==2:
+    print(f"{number} is prime number")
+else:
+    print(f"{number} is NOT prime number")
+
+
+#0의 의미=subjects format안에 첫번째 인수라는 것 응용하면 dictionary 여러개 쓸 수 있음
+#소수
+#count변수하나 저장하고 나누어떨어지는 횟수가 2번이면 소수
