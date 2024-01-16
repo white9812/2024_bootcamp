@@ -1,20 +1,19 @@
+univ="inha"
+i=0
+while i<len(univ):
+    print(univ[i],end=" ")
+    i=i+1
+#바로 위 코드는 오류날 수 도 있음
+print()
 
-# prime number
-number=int(input("Input number : "))
-is_prime=True
-if number <2 :
-    print(f"{number} is NOT prime number")
-else:
+# best
+for letter in univ:
+    print(letter,end=" " )
 
-    i=2
-    while i< number:
-        if number % i == 0:
-            if_prime = False
-            break
-        i=i+1
+print()
 
-
-    if is_prime:
-        print(f"{number} is prime number")
-    else:
-        print(f"{number} is NOT prime number")
+#for k in range(0,len(univ),1): #1생략가능
+#for k in range(0,len(univ),1):
+# best
+for k in range(len(univ)):
+    print(univ[k],end=" ")
