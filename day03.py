@@ -1,16 +1,27 @@
-university=("Inha\nUniversity!")
-#print(university)
-print(university[:4])#정방향
-print(university[:-11])
-print(len(university))
-print(university[::2])
-print(university[::1])
-
-#university=r"Inha\nUniversity"#raw string-tab키나 줄바꿈을 그대로 보여줌
-#print(university)
-number1=input("First number: ")
-number2=input("Second number: ")
-print(number1+number2)#산수가 아니라 문자열끼리 결합
-print(number1*3)
-print(number1+3)#TypeError: can only concatenate str (not "int") to str
+course ="2024 KEB bootcamp"
+print(course.replace("KEB","Inha"))
+print(course)
+course=course.replace("KEB","Inha")
+print(course)
+course="KEB 2024 KEB bootcamp"
+course=course.replace("KEB","Inha",1)
+print(course)
+course="KEB 2024 KEB bootcamp KEB"
+course=course.replace("KEB","Inha",2)
+print(course)
+course="KEB 2024 KEB bootcamp KEB"
+course=course.replace("KEB","Inha",100)
+print(course)
+course="KEB 2024 KEB bootcamp KEB....*!#"
+print(course.strip())
+print(course.strip("!#.*"))
+course="KEB# 2024 KEB bootcamp KEB....*!#"
+print(course.strip("!#.*"))
+course="* KEB# 2024 KEB !bootcamp KEB....*!#"
+print(course.strip("!#.*"))
+print(course.find("KEB"))
+print(course.rfind("KEB"))
+print(course.index("KEB"))
+print(course.find("Inha")) #-1 if 문 사용 -1이면 찾으시는 문자열은 없습니다.
+print(course.index("Inha"))#ValueError: substring not found
 
