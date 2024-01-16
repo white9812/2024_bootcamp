@@ -1,13 +1,16 @@
-# Assignment(loop)
+university=("Inha\nUniversity!")
+#print(university)
+print(university[:4])#정방향
+print(university[:-11])
+print(len(university))
+print(university[::2])
+print(university[::1])
 
-while True:
-    menu = input("1) Fahraenheit ->Celsius 2) Celsius -> Fahrenheit 3)Quit program : ")
-    if menu == "1":
-        fahrenheit = float(input("Input Fahreheit : "))
-        print(f"fahrenheit: {fahrenheit}F,Celsius: {((fahrenheit - 32.0) * 5.0 / 9.0):.4f}C")
-    elif menu == "2":
-        celsius = float(input("Input celsius : "))
-        print(f": celsius{celsius}c,Fahreheit: {(celsius * (9.0 / 5.0) + 32):.4f}F")
-    elif menu=="3" :
-        print("Terminate Program")
-        break
+#university=r"Inha\nUniversity"#raw string-tab키나 줄바꿈을 그대로 보여줌
+#print(university)
+number1=input("First number: ")
+number2=input("Second number: ")
+print(number1+number2)#산수가 아니라 문자열끼리 결합
+print(number1*3)
+print(number1+3)#TypeError: can only concatenate str (not "int") to str
+
