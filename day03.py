@@ -1,16 +1,15 @@
-subjects={'python':"key","c++":"sung","datastructure":"kim","database":"kang"}
-print("{0[python]} {0[datastructure]}".format(subjects))
+
 # prime number
 number=int(input("Input number : "))
 cnt=0
 
-i=1
-while i<= number:
+i=2
+while i< number: #1과 자기자신은 돌지않음
     if number % i == 0:
         cnt=cnt+1
         #print(i) 약수 구하기
     i+=1 #무한 루프에 빠지지않기위해
-if cnt ==2:
+if cnt ==0:
     print(f"{number} is prime number")
 else:
     print(f"{number} is NOT prime number")
