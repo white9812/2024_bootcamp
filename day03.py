@@ -1,27 +1,6 @@
-course ="2024 KEB bootcamp"
-print(course.replace("KEB","Inha"))
-print(course)
-course=course.replace("KEB","Inha")
-print(course)
-course="KEB 2024 KEB bootcamp"
-course=course.replace("KEB","Inha",1)
-print(course)
-course="KEB 2024 KEB bootcamp KEB"
-course=course.replace("KEB","Inha",2)
-print(course)
-course="KEB 2024 KEB bootcamp KEB"
-course=course.replace("KEB","Inha",100)
-print(course)
-course="KEB 2024 KEB bootcamp KEB....*!#"
-print(course.strip())
-print(course.strip("!#.*"))
-course="KEB# 2024 KEB bootcamp KEB....*!#"
-print(course.strip("!#.*"))
-course="* KEB# 2024 KEB !bootcamp KEB....*!#"
-print(course.strip("!#.*"))
-print(course.find("KEB"))
-print(course.rfind("KEB"))
-print(course.index("KEB"))
-print(course.find("Inha")) #-1 if 문 사용 -1이면 찾으시는 문자열은 없습니다.
-print(course.index("Inha"))#ValueError: substring not found
-
+subjects="python c++ database linux"
+subject =input("수강신청과목 입력 : ")
+if subjects.find(subject) != -1 :#문자열 내에 존재
+    print(f"해당 과목이 존재합닌다. 위치는 {subjects.find(subject)}번 인덱스 ")
+else:
+    print("해당 과목이 존재하지 않습니다.")
