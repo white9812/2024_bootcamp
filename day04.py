@@ -1,19 +1,26 @@
-# squares=list() #empty list
-# squares.append(1*1)
-# squares.append(2*2)
-# squares.append(3*3)
-# squares.append(4*4)
-# squares.append(5*5)
-# print(squares)
-#
-# squares=list()
-# for i in range(1,6):
-#     squares.append(i*i)
-# print(squares)
+#dictionary
+#sugang={}
 
-# #list comprehension , tuple comprehension은 없음
-# squares =[i*i for i in range(1,6,1)]
-# print(squares)
+sugang=dict(python="kim",cpp="sung",db="kang")
+# print(sugang)
+# sugang['datastructure']="kim" #add
+# print(sugang)
+# sugang['datastructure']='park' #update
+# print(sugang)
+# print(sugang["db"])
+# print(sugang.get('db'))
+# print(sugang.get('opensource'))
+# print(sugang.get('opensource','not exist'))
+for subject,professor in sugang.items():#key, value동시에 뽑아줌 unpacking해서 찢은거
+    print(f"{subject} 과목 담당교수는 {professor}입니다.")#현재 이 순서는  보장된 것이 아니다. 일부러 맞춘것
 
-even_squares =[i*i for i in range(1,6,1) if i%2==0]
-print(even_squares)
+
+#for k in sugang.keys():
+for k in sugang:#key는 default값
+    print(k)
+for v in sugang.values():#valus값만 뽑음
+    print(v)
+for s in sugang.items():
+    print(s) #tuple형태로 묶여져서 출력
+
+
