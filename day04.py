@@ -1,23 +1,19 @@
-#subjects=["a","b","c"]
-subjects=["a",["b","c"],"d"]
-a=subjects
-b=subjects.copy()
-c=list(subjects)
-d=subjects[:]
-print(subjects,a,b,c,d)
-#subjects[1]="x"
-subjects[1][1]="x"
-print(subjects,a,b,c,d)
+# squares=list() #empty list
+# squares.append(1*1)
+# squares.append(2*2)
+# squares.append(3*3)
+# squares.append(4*4)
+# squares.append(5*5)
+# print(squares)
+#
+# squares=list()
+# for i in range(1,6):
+#     squares.append(i*i)
+# print(squares)
 
-import copy
+# #list comprehension , tuple comprehension은 없음
+# squares =[i*i for i in range(1,6,1)]
+# print(squares)
 
-#subjects=["a","b","c"]
-subjects=["a",["b","c"],"d"]
-a=subjects
-b=copy.deepcopy(a)
-c=list(subjects)
-d=subjects[:]
-print(subjects,a,b,c,d)
-#subjects[1]="x"
-subjects[1][1]="x"
-print(subjects,a,b,c,d)
+even_squares =[i*i for i in range(1,6,1) if i%2==0]
+print(even_squares)
