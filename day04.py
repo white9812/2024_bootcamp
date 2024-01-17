@@ -1,45 +1,91 @@
-# drink_food={"위스키":"초콜릿","와인":"치즈","소주":"삼겹살","고량주":"양꼬치"}
+#assignment
+#1
+e2f={"dog":"chien","cat":"chat","walrus":"morse"}
+print(e2f)
+#2
+# print(e2f.keys("walrus")) 에러난 이유:keys()는 모든 key값을 가지고 오는 것
+print(e2f["walrus"])
+#3
+# f2e_list=list(e2f.items())[::-1]
+# f2e_list=list(e2f.items()).reverse() 둘다 같은건데 왜 안되는지 모르겠음
+# f2e_list.reverse()
+# print(e2f.items())
+print(e2f.items()) #이거 자체는 dict_items()
+k=e2f.items()
+print(type(k)) #TypeError: 'dict_items' object is not subscriptable(인덱싱 또는 슬라이싱  불가)
+# for e ,f in  list(e2f.items()):
+#    print(e,f) ->생각해보기
+#ver1
+f2e={}
+for pair in list(e2f.items()):
+    #print(type(pair))
+    e=pair[0]
+    f=pair[1]
+    #new_pair={f:e}
+    f2e.update({f:e})
+print(f2e)
+#ver2->이게 더 나음
+f2e={}
+for e, f in list(e2f.items()):
+    f2e.update({f:e})
+    print(f2e)
+#ver3 update없이 바로 넣는 방법은 없을까?
+
+#4
+#ver1
+print(list(e2f.keys())[list(e2f.values()).index("chien")])
+#type(e2f.values())
+#<class 'dict_values'> =>큰 dict에 유용, 사용하지 않을 list를 만들지 x
+#ver2 value와 key값을 바꿔서 찾음
+print(f2e["chien"])
+#ver3 반복문이용- 그런데 이방식은 v가 chien인거 찾을때까지 계속 돌아감
+for k, v in e2f.items():
+    if v=="chien":
+        print(k)
+
+#5
+for e in e2f.keys():
+    print(e)
+
+#6 참조= 이름이 같다.
+life={
+    "animals":{"cats":"Henry","octopi":"Grumpy","emus":"Lucy"},
+    "plants":{},
+    "other":{}
+}
+
+#7
+print(list(life.keys()))
+
+#8
+print(list(life["animals"].keys()))
+
+#9
+print(life["animals"]["cats"])
+#10
+squares={i:i*i for i in range(10)}
+print(squares)
+
+#원본 교재
+#6
+# "animals"{"cats":"Henry","octopi":"Grumpy","emus":"Lucy"} <-SyntaxError: invalid syntax
 #
-# drink=input(drink_food.keys())
-# dringk_kejs
-# #drininput("다음 둘 중에 고르시오")
-# drink=input(d)
-#
-# print(drink_food[drinks])
-import random
-drinks_foods = {"위스키": "초콜릿", "와인": "치즈", "소주": "삽겹살", "고량주": "양꼬치"}
-#del drinks_foods['위스키']
-#drinks_foods["사케"]="광어회"
-japan_drinks_foods={"사케":"광어회","위스키":"낙곱새"}#위 dict와 중복
-drinks_foods.update(japan_drinks_foods)
-# print(drinks_foods)
-# print(drinks_foods.pop("고량주"))
-# print(drinks_foods)
-# drinks_foods_keys=list(drinks_foods)
-# print(drinks_foods_keys.remove("위스키")) #pop은 위스키에 해당하는 값을 return 해줬지만(print 통해서) remove는 해주지 않음
+life={
+    "animals":{"cats":["Henry","Grumpy","Lucy"],"octopi":" ","emus":" "},
+    "plants":{},
+    "other":{}
+}
+#7
+print(list(life.keys()))
+
+#8
+print(list(life["animals"].keys()))
+
+#9
+print(life["animals"]["cats"])
+#10
+squares={i:i*i for i in range(10)}
+print(squares)
 
 
-#drink = input(drinks_foods.keys())
-drinks_foods_keys = list(drinks_foods)
-#print(drinks_foods_keys)
-#print(random.choice(drinks_food_keys))#sequence type의 값은 리스트가 아니여도 된다. 여기서 하나 선택
-#random_drink=random.choice(drinks_foods_keys)
-while True:
-    menu = input(f'다음 술중에 고르세요.\n1) {drinks_foods_keys[0]}   2) {drinks_foods_keys[1]}   3) {drinks_foods_keys[2]}   4) {drinks_foods_keys[3]}   5) 랜덤 6) 종료 : ')
-    if menu == '1':
-        print(f'{drinks_foods_keys[0]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[0]]} 입니다')
-    elif menu == '2':
-        print(f'{drinks_foods_keys[1]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[1]]} 입니다')
-    elif menu == '3':
-        print(f'{drinks_foods_keys[2]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[2]]} 입니다')
-    elif menu == '4':
-        print(f'{drinks_foods_keys[3]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[3]]} 입니다')
-    elif menu == '5':
-        random_drink = random.choice(drinks_foods_keys)
-        print(f'{random_drink}에 어울리는 안주는 {drinks_foods[random_drink]} 입니다.')
-        print(f'다음에 또 오세요')
-        pass
-    elif menu == "6":
-        print(f'다음에 또 오세요')
 
-        break
