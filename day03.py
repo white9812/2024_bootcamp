@@ -3,6 +3,8 @@ for i in list[range(3,-1,-1)]:
     print(i)
 
 #2
+# 문제점1:소수가 아닐때는 반복문을 빠져나오지만 앞 수가 소수일때는 끊임없이 반복문을 반복한다.
+#
 guess_me= 7
 number=1
 while True:
@@ -41,7 +43,7 @@ while True:
         n2 = int(numbers[1])
 
         if n1 > n2:
-            n1, n2 = n2, n1
+            n1, n2 = n2, n1 #tuple로 만들어주고 각각 값 할당 하기 (n2,n1)이 임시 tuple,packing되었음
         for number in range(n1, n2 + 1):
             is_prime = True
 
