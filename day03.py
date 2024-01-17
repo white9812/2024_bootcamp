@@ -1,4 +1,12 @@
+#1
+for i in list[range(3,-1,-1)]:
+    print(i)
+
+#2
+guess_me= 7
+number=1
 while True:
+<<<<<<< HEAD
     menu = input("1) Fahraenheit ->Celsius 2) Celsius -> Fahrenheit 3)one prime number :       "
                  "4) prime numbers:           5) Quit program:   ")
     if menu == "1":
@@ -50,4 +58,29 @@ while True:
         print()#print자체에 줄바꿈기능있음
     elif menu == "5":
         print("프로그램 종료합니다.")
+=======
+    if guess_me > number:
+        print("too low")
+    elif guess_me < number:
+        print("oops")
+
+>>>>>>> 89c6c4b36bd7a46bd726e027bfa7781133125cc8
+        break
+    else:
+        print("find it!")
+        print(number)
+        break
+
+    number = number + 1
+#3
+guess_me=5
+for number in range(10):
+    if number < guess_me:
+        print("too low")
+    elif (number ==
+          guess_me):
+        print("find it!")
+        break
+    else :
+        print("oops")
         break
