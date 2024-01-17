@@ -6,9 +6,18 @@
 # drink=input(d)
 #
 # print(drink_food[drinks])
-
 import random
 drinks_foods = {"위스키": "초콜릿", "와인": "치즈", "소주": "삽겹살", "고량주": "양꼬치"}
+#del drinks_foods['위스키']
+#drinks_foods["사케"]="광어회"
+japan_drinks_foods={"사케":"광어회","위스키":"낙곱새"}#위 dict와 중복
+drinks_foods.update(japan_drinks_foods)
+# print(drinks_foods)
+# print(drinks_foods.pop("고량주"))
+# print(drinks_foods)
+# drinks_foods_keys=list(drinks_foods)
+# print(drinks_foods_keys.remove("위스키")) #pop은 위스키에 해당하는 값을 return 해줬지만(print 통해서) remove는 해주지 않음
+
 
 #drink = input(drinks_foods.keys())
 drinks_foods_keys = list(drinks_foods)
@@ -27,7 +36,7 @@ while True:
         print(f'{drinks_foods_keys[3]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[3]]} 입니다')
     elif menu == '5':
         random_drink = random.choice(drinks_foods_keys)
-        print(f'{random_drink}에 어울리는 안주는 {drinks_foods[random_drink]5} 입니다.')
+        print(f'{random_drink}에 어울리는 안주는 {drinks_foods[random_drink]} 입니다.')
         print(f'다음에 또 오세요')
         pass
     elif menu == "6":
