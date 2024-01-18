@@ -22,7 +22,7 @@ while True:
     elif menu == "3":
         number = int(input("Input number : "))
         is_prime = True
-        if number < 2:
+        if number < 2: #1은 소수가 아닌데 소수라고 판정하게 되서 이 조건문을 넣었음
             print(f"{number} is NOT prime number")
         else:
 
