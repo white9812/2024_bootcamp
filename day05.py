@@ -1,4 +1,4 @@
-def is_prime(n) -> bool :
+def is_prime(n) -> bool:
     """
     매개변수로 넘겨받은 수가 소수인지 여부를 boolean으로 리턴
     :param n: 판정할 매개변수
@@ -18,8 +18,8 @@ def is_prime(n) -> bool :
         return True
 
 
-help(is_prime)
-help(len)
+# help(is_prime)
+# help(len)
 
 
 numbers = input("Input number : ").split()
@@ -30,13 +30,5 @@ if n1 > n2:
     n1, n2 = n2, n1
 for number in range(n1, n2 + 1):
     if is_prime(number):
-        print(number,end=" ")
-    else:
-        for i in range(2, number):
-            if number % i == 0:
-                is_prime = False
-                break #구간소수구할때 그냥 소수 구할때도 썼음
-
-        if is_prime:
-            print(number, end=" ")
+        print(number, end=" ")
 
