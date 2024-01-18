@@ -19,3 +19,6 @@ def squares(*n) ->list :
 print(squares(7,5,2))
 print(run_function(squares,9,10))
 
+
+
+
