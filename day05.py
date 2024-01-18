@@ -1,19 +1,11 @@
-# def out_func(nout):
-#     def inner_func(nin):
-#         return nin*nin
-#     return inner_func(nout)
-#
-# print(out_func(5)) <- 일반적인 함수 호출
+# numbers= ["7","-11","3"]
+# hap=0
+# for number in numbers:
+#     hap=hap+int(number) <-정수로 바꾸기 위해
+# print(hap)
 
-
-#closure는 바깥쪽의 함수의 인수를 그냥 바로 쓴다.
-def out_func(nout):
-    def inner_func():
-        return nout*nout #직접 쓴다.
-    return inner_func
-
-x=out_func(9)
-print(type(x))
-print(x)
-print(x())
+#더 간단한 방식
+numbers= ["7","-11","3"]
+print(map(int,numbers)) #객체로 나옴
+print(sum(map(int,numbers)))#그냥 출력할땐 이렇게 쓰고 끝내면 됨
 
