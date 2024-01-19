@@ -22,3 +22,5 @@ def factorial_recursion(n):
 number=int(input("number: "))
 # print(factorial_repetition(int(input("number : "))))
 print(factorial_recursion(number))
+print(globals())
+
