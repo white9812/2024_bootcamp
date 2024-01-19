@@ -1,26 +1,33 @@
-#recursion(재귀)
-def factorial_repetition(n)->int:
-    '''
-    반복문을 이용한 팩토리얼 함수
-    :param n: 정수,int
-    :return: 팩토리얼 값,int
-    '''
-    result =1 #곱셈에 대한 연산을 할거라서
-    for i in range(2,n+1):
-        result =result*i #값이 변할 위험성이 있음 따라서 이런경우 재귀함수가 유용 하지만 좀 느림
-    return result
-def factorial_recursion(n):
-    '''
-    재귀함수를 사용한 팩토리얼 함수
-    :param n: 정수,int
-    :return:  function,int
-    '''
-    if n==1:
-        return n
-    else:
-        return n*factorial_recursion(n-1) #n=1이 될때까지 반복
-number=int(input("number: "))
-# print(factorial_repetition(int(input("number : "))))
-print(factorial_recursion(number))
-print(globals())
+import random
+# numbers=list()
+# for i in range(5):
+#     numbers.append(random.randint(1,100))
+# print(numbers)
+
+numbers=[random.randint(1,100) for i in range(5)]
+# print(numbers)
+# pick=int(input("Input index: "))
+# print(numbers[pick])
+# pick=int(input(f"Input index(0~{len(numbers)-1}): "))
+# print(numbers[pick])
+
+#예외처리하자
+try:
+    pick=int(input(f"Input index(0~{len(numbers)-1}): "))
+    print(numbers[pick])#index 에러는 여기서 발생하는 것
+    print(5/0)
+# except IndexError : #그냥 except 하면 모든 에러 잡음 즉 index에러 아닌것도 이렇게 출력함
+#     print("Out of range : Wrong index number")
+except IndexError as err :
+     print(f"Out of range : Wrong index number \n {err}") # 시스템에서 던져주는 에러메세지
+# except ValueError:
+#     print("Input Only Number~")
+except ValueError as err: #꼭 err하지않아도 됨
+     print(f"Input Only Number~\n {err}")
+except ZeroDivisionError as err:
+    print(f"The denominator cannot be 0.\n{err}")
+# except Exception: #맨 밑에 와야함
+#     print("Error occurs")
+except Exception as err: #맨 밑에 와야함
+     print(f"Error occurs \n {err}")
 
