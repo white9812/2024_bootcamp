@@ -7,6 +7,16 @@ class SwimmingMixin:
 class Pokemon:
     def __init__(self,name):
         self.name=name
+    def attack(self):
+        print("공격!")
+
+    def get_name(self):
+        print("inside getter")
+        return self.name
+
+    def set_name(self,new_name):
+        print("inside getter")
+        self.name=new_name
 
 class Charizard(Pokemon,FlyingMixin):
     pass
@@ -16,8 +26,13 @@ class Gyarados(Pokemon,SwimmingMixin):
 
 g1=Gyarados("가라도스")#객체생성
 c1=Charizard("리자몽")
-print(c1.fly())
-print(g1.swim())
-
-
-
+# print(c1.fly())
+# print(g1.swim())
+# c1.attack()
+#Charizard.attack()#c1안주면 에러남 클래스명을 준것=Charizard.한것 자체가
+#self에는 객체명이 와야함 따라서 c1(self)가 와야함
+print(g1.name) #<-직접적으로 접근
+print(g1.set_name)#g1.setname()하면 에러남
+g1.set_name("잉어킹")
+g1.name="잉어킹"
+print(g1.name)
