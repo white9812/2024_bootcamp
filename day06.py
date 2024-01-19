@@ -1,23 +1,23 @@
+class FlyingMixin:
+    def fly(self):
+        return f"{self.name}이(가) 하늘을 훨훨 날아갑니다~ "
+class SwimmingMixin:
+    def swim(self):
+        return f"{self.name}이(가) 수영을 합니다."
 class Pokemon:
     def __init__(self,name):
         self.name=name
-    def attack(selfself,target):
-        print(f"{self.name}이(가)  {target.name}을(를) 일렉트릭 공격")
- class Squirtle(Pokemon):
-     def attack(selfself, target):
-         print(f"{self.name}이(가)  {target.name}을(를) 일렉트릭 공격")
-     def electirc_info(self):
-         print("전기계열의 공격을 합니다.")
 
-p1=pikacu("피카츄")
-p2=squritle("꼬부기")
-p3=Pokemon("아무개")
-p1.electric_info()
-p3.eletric_info()
-p1.attack(p2)
-p2.
+class Charizard(Pokemon,FlyingMixin):
+    pass
 
-print(p1.name) # p1에 name없으니까 부모 클래스에 올라간다.
-print(issubclass(Pickchu,Pokemon))
-print(issubclass(Pickchu,Pokemon))
+class Gyarados(Pokemon,SwimmingMixin):
+    pass
+
+g1=Gyarados("가라도스")#객체생성
+c1=Charizard("리자몽")
+print(c1.fly())
+print(g1.swim())
+
+
 
