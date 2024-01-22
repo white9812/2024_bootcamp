@@ -45,9 +45,16 @@ class Charizard(Pokemon):
     pass
 
 class Pikachu(Pokemon):
+    def __init__(self,name,hp,fly):
+        self.name=name
+        self.hp=hp
+        # self.fly=fly #일반적인 값이 아니라 자식을 받음 ,aggregation
+        self.fly=NoFly()#composition-객체가 피카츄안에서 만들어짐,객체가 변수가 됨
+        #피카츄객체가 다른 객체를 가지고 있는 것
+
 
     pass
-nofly=NoFly()
+# nofly=NoFly()
 g1=Pikachu("피카츄",35,nofly) #lsp
 wings=FlyingBehavior() #객체가 받은 class가 다름 각각 작동함
 c1 = Charizard("리자몽", 120,wings)
@@ -61,3 +68,4 @@ print(g1+c1)
 #print(g1+200)
 p1.set_fly_behavior(JetPack())
 print(p1.fly.fly())
+p1=Pikachu("피카츄",35,nofly)
