@@ -14,3 +14,9 @@ def isprime(n) -> bool:
             i += 1
         return True
 
+def fahrenheit_to_celsius->float():
+    """
+
+    :return:
+    """
+    return (fahrenheit-32.0)*5.0/9.0
