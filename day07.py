@@ -4,6 +4,9 @@ class FlyingBehavior:
 class NoFly(FlyingBehavior):
     def fly(self):
         return f"하늘을 날 수 없습니다."
+class JetPack(FlyingBehavior):
+    def fly(self):
+        return f"날개로 하늘을 훨훨 날아갑니다."
 
 class SwimmingBehavior:
     def swim(self):
@@ -14,6 +17,9 @@ class Pokemon:
         self.__name = name
         self.hp = hp
         selp.fly=fly
+
+    def set_fly_behavior(self,fly):
+        self.fly=fly
 
     def attack(self):
         print("공격~")
@@ -39,6 +45,7 @@ class Charizard(Pokemon):
     pass
 
 class Pikachu(Pokemon):
+
     pass
 nofly=NoFly()
 g1=Pikachu("피카츄",35,nofly) #lsp
@@ -47,7 +54,10 @@ c1 = Charizard("리자몽", 120,wings)
 # g1.swim()
 print(g1.fly.fly())
 print(c1.fly.fly())#fly가 가지고 있는 fly인스턴스
+print(p1.fly.fly()) #피카추는 날 수 없지만 jetpack 있으면 날 수 있음 getter/setter로 날 수 있는 기능 넣기
 print(g1)
 print(c1)
 print(g1+c1)
 #print(g1+200)
+p1.set_fly_behavior(JetPack())
+print(p1.fly.fly())
