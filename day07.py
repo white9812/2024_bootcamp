@@ -1,15 +1,19 @@
-class FlyingMixin:
+class FlyingBehavior:
     def fly(self):
-        return f"{self.__name}이(가) 하늘을 훨훨 날아갑니다~"
+        return "하늘을 훨훨 날아갑니다~"
+class NoFly(FlyingBehavior):
+    def fly(self):
+        return f"하늘을 날 수 없습니다."
 
-class SwimmingMixin:
+class SwimmingBehavior:
     def swim(self):
         return f"{self.__name}이(가) 수영을 합니다."
 
 class Pokemon:
-    def __init__(self, name):
+    def __init__(self, name, hp,fly):
         self.__name = name
-        self.hp=hp #instance
+        self.hp = hp
+        selp.fly=fly
 
     def attack(self):
         print("공격~")
@@ -19,27 +23,31 @@ class Pokemon:
         return self.__name
 
     @name.setter
-    def name(self, new_name): #self가 오니까 바로 객체가 와야함
+    def name(self, new_name):
         self.__name = new_name
 
-    #name = property(get_name, set_name)
+    # magic method
     def __str__(self):
         return self.__name + " 입니다"
 
-    def  __add__(self,target):
-        #return self.__name+"+"target.__name
-        return f"두 포켓몬스터 체력의 합은 {self.hp+target.hp}입니다."
+    def __add__(self, target):
+        #return self.__name + " + " + target.__name
+        return f"두 포켓몬스터 체력의 합은 {self.hp + target.hp}입니다."
 
 
-class Charizard(Pokemon, FlyingMixin):
+class Charizard(Pokemon):
     pass
 
-class Gyarados(Pokemon, SwimmingMixin):
+class Pikachu(Pokemon):
     pass
-
-g1 = Gyarados("갸라도스",100)
-c1 = Charizard("리자몽",100)
+nofly=NoFly()
+g1=Pikachu("피카츄",35,nofly) #lsp
+wings=FlyingBehavior() #객체가 받은 class가 다름 각각 작동함
+c1 = Charizard("리자몽", 120,wings)
+# g1.swim()
+print(g1.fly.fly())
+print(c1.fly.fly())#fly가 가지고 있는 fly인스턴스
 print(g1)
 print(c1)
-# print(g1+c1)
-print()
+print(g1+c1)
+#print(g1+200)
