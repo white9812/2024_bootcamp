@@ -7,13 +7,13 @@ while True:
 
     if menu == '1':
         fahrenheit = float(input('Input Fahrenheit : '))
-        print(f'Fahrenheit : {fahrenheit}F, Celsius : {mymath.fahrenheit_to_celsius(fahrenheit)}C')
+        print(f'Fahrenheit : {fahrenheit}F, Celsius : {mymath.fahrenheit_to_celsius(fahrenheit):.4f}C')
     elif menu == '2':
         celsius = float(input('Input Celsius : '))
-        print(f'Celsius : {celsius}C, Fahrenheit : {((celsius*9.0/5.0)+32.0):.4f}F')
+        print(f'Celsius : {celsius}C, Fahrenheit : {mymath.celsius_to_fahrenheit(celsius):.4f}F')
     elif menu == '3':
         number = int(input("Input number : "))
-        if mymath.isprime(number): #특정함수를 특정 파일에 옮기고 다시 가져옴
+        if mymath.isprime(number):
             print(f'{number} is prime number')
         else:
             print(f'{number} is NOT prime number!')
